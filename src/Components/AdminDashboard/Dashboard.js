@@ -2,10 +2,9 @@ import React, { useState ,useEffect} from 'react';
 import GridLayout from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
-import TeacherList from './TeacherList';
-import StudentList from './StudentList';
-import Header from './Header'; 
-import { FaArrowsAltH, FaArrowsAltV, FaColumns } from 'react-icons/fa';
+import TeacherList from '../TeacherList/TeacherList';
+import StudentList from '../StudentList/StudentList';
+import Header from '../Header/Header'
 
 const Dashboard = () => {
     const initialLayout1 = [
@@ -23,8 +22,8 @@ const Dashboard = () => {
       ];
 
       const initialLayout3 = [
-        { i: 'widget1', x: 1, y: 2, w: 4, h: 4 },
-        { i: 'widget2', x: 3, y: 0, w: 4, h: 4 },
+        { i: 'widget1', x: 1, y: 2, w: 2, h: 2 },
+        { i: 'widget2', x: 3, y: 0, w: 2, h: 2 },
         { i: 'widget3', x: 1, y: 2, w: 4, h: 4 },
         { i: 'widget4', x: 1, y: 6, w: 4, h: 4 },
       ];
@@ -51,11 +50,11 @@ const Dashboard = () => {
       };
 
   const imagePaths = [
-    require('./images/school.jpeg'),
-    require('./images/classroom.jpeg'),
-    require('./images/student.jpeg'),
-    require('./images/teacher.jpeg'),
-    require('./images/students.jpeg'),
+    require('../../images/school.jpeg'),
+    require('../../images/classroom.jpeg'),
+    require('../../images/student.jpeg'),
+    require('../../images/teacher.jpeg'),
+    require('../../images/students.jpeg'),
   ];
 
   const [resizingEnabled, setResizingEnabled] = useState(false);
