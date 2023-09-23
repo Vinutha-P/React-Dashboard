@@ -7,10 +7,6 @@ const StudentList = () => {
     { id: 2, name: 'Student 2', grade: 'B' },
     { id: 1, name: 'Student 1', grade: 'A' },
     { id: 2, name: 'Student 2', grade: 'B' },
-    { id: 1, name: 'Student 1', grade: 'A' },
-    { id: 2, name: 'Student 2', grade: 'B' },
-    { id: 1, name: 'Student 1', grade: 'A' },
-    { id: 2, name: 'Student 2', grade: 'B' },
     // Add more students here...
   ];
 
