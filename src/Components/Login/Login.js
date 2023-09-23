@@ -12,8 +12,10 @@ const Login = ({ onLogin }) => {
   const handleLogin = () => {
     if (role === 'admin' && username === 'admin@gmail.com' && password === 'qwerty') {
       onLogin('admin');
-    } else if (role === 'principal' && username === 'princi@gmail.com' && password === 'qwerty') {
+    } else if (role === 'principal' && username === 'principal@gmail.com' && password === 'qwerty') {
       onLogin('principal');
+    } else if (role === 'teacher' && username === 'teacher@gmail.com' && password === 'qwerty') {
+      onLogin('teacher');
     } else {
       setErrorMessage('Invalid credentials. Please try again.');
     }
@@ -55,6 +57,15 @@ const Login = ({ onLogin }) => {
               onChange={() => setRole('principal')}
             />
             Principal
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="Teacher"
+              checked={role === 'teacher'}
+              onChange={() => setRole('teacher')}
+            />
+            Teacher
           </label>
         </div>
         <button onClick={handleLogin}>Login</button>
