@@ -11,9 +11,9 @@ const TeacherList = () => {
   ];
 
   return (
-    <div style={{ padding: '10px', overflow: 'hidden' }}>
+    <div style={{ padding: '10px', overflow: 'hidden' ,height:'100%',backgroundColor:'lightpink'}}>
       <h2>Teachers List</h2>
-      <div style={{ overflowY: 'auto', maxHeight: '400px' }}>
+      <div style={{ overflowY: 'auto',  }}>
         <table style={{ width: '100%' }}>
           <thead>
             <tr>

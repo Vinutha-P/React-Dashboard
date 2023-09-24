@@ -1,19 +1,13 @@
 import React from 'react';
 
-const nonTeaching = () => {
+const nonTeaching = ({teacherData}) => {
   // Generate random teacher data for the table
-  const teacherData = [
-    { id: 1, name: 'technician' },
-    { id: 2, name: 'PT' },
-    { id: 3, name: 'Files'},
-    { id: 4, name: 'So on' },
-    // Add more teachers here...
-  ];
+
 
   return (
     <div style={{ padding: '10px', overflow: 'hidden' }}>
       <h2>Non Teaching Staff</h2>
-      <div style={{ overflowY: 'auto', maxHeight: '400px' }}>
+      <div style={{ overflowY: 'auto'}}>
         <table style={{ width: '100%' }}>
           <thead>
             <tr>

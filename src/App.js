@@ -4,7 +4,8 @@ import Login from './Components/Login/Login';
 import Dashboard from './Components/AdminDashboard/Dashboard';
 import PrincipalDashboard from './Components/PrincipalDashboard/principalDashboard';
 import TeacherDashBoard from './Components/TeacherDashBoard/teacherDashBoard';
-// import MainDashboard from './Components/AdminDashboard/MainDashboard';
+import AdminTeacherDashboard from './Components/AdminDashboard/AdminTeacherDashboard';
+import MainDashboard from './Components/AdminDashboard/MainDashboard';
 
 function App() {
   const [user, setUser] = useState(null);

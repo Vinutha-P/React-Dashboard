@@ -5,15 +5,15 @@ const StudentList = () => {
   const studentData = [
     { id: 1, name: 'Student 1', grade: 'A' },
     { id: 2, name: 'Student 2', grade: 'B' },
-    { id: 1, name: 'Student 1', grade: 'A' },
-    { id: 2, name: 'Student 2', grade: 'B' },
+    { id: 3, name: 'Student 3', grade: 'A' },
+    { id: 4, name: 'Student 4', grade: 'B' },
     // Add more students here...
   ];
 
   return (
-    <div style={{ padding: '10px', overflow: 'hidden' }}>
+    <div style={{ padding: '10px', overflow: 'hidden',backgroundColor: "lightyellow",height:'100%' }}>
     <h2>Students List</h2>
-    <div style={{ overflowY: 'auto', maxHeight: '400px' }}>
+    <div style={{ overflowY: 'auto'}}>
       <table style={{ width: '100%' }}>
         <thead>
           <tr>

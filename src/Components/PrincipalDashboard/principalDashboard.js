@@ -6,6 +6,7 @@ import Header from "../Header/Header";
 import TeacherList from "../TeacherList/TeacherList";
 import StudentList from "../StudentList/StudentList";
 import NonTeaching from "../NonTeaching/nonTeaching";
+import Calenderwidget from "../Sidebar/calenderwidget";
 
 const PrincipalDashboard = () => {
   const [layout, setLayout] = useState([]);
@@ -28,6 +29,13 @@ const PrincipalDashboard = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const teacherData = [
+    { id: 1, name: 'technician' },
+    { id: 2, name: 'PT' },
+    { id: 3, name: 'Files'},
+    { id: 4, name: 'So on' },
+    // Add more teachers here...
+  ];
 
   const imagePaths = [
     require("../../images/school.jpeg"),
@@ -40,27 +48,30 @@ const PrincipalDashboard = () => {
   return (
     <div>
       <Header />
-      <h1>Principal Dashboard</h1>
+      <h1 style={{textAlign:'center'}}>Principal Dashboard</h1>
       <GridLayout
         className="layout"
         layout={layout}
         cols={4}
         rowHeight={100}
-        width={1200}
+        width={1430}
         isResizable={false}
         isDraggable={false}
       >
         <div key="widget1" style={{ backgroundColor: "lightblue" }}>
-        <img src={imagePaths[currentImageIndex]} alt="Widget 1" />
+        <img style={{width:'100%',height:"100%"}} src={imagePaths[currentImageIndex]} alt="Widget 1" />
         </div>
         <div key="widget2" style={{ backgroundColor: "lightcoral" }}>
-        <NonTeaching/>
+        <NonTeaching teacherData={teacherData}/>
         </div>
-        <div key="widget3" style={{ backgroundColor: "lightpink" }}>
+        <div key="widget3" >
         <TeacherList />
         </div>
-        <div key="widget4" style={{ backgroundColor: "lightyellow" }}>
+        <div key="widget4" >
         <StudentList />
+        </div>
+        <div key="widget5" style={{ backgroundColor: "purple" }}>
+        <Calenderwidget />
         </div>
       </GridLayout>
     </div>

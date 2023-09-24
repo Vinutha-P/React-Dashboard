@@ -4,7 +4,6 @@ import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import Select from "react-select";
 import TeacherList from "../TeacherList/TeacherList";
-import NonTeaching from "../NonTeaching/nonTeaching";
 import StudentList from "../StudentList/StudentList";
 import Header from "../Header/Header";
 import { RiLayoutGridFill } from "react-icons/ri";
@@ -19,7 +18,7 @@ const availableWidgets = [
   { id: "calendar", name: "Calendar Widget", component: Calenderwidget },
 ];
 
-const Dashboard = () => {
+const AdminTeacherDashboard = () => {
   const initialLayout1 = [
     { i: "widget1", x: 0, y: 2, w: 2, h: 4 },
     { i: "widget2", x: 2, y: 0, w: 2, h: 4 },
@@ -129,7 +128,7 @@ const Dashboard = () => {
   return (
     <div>
       <Header />
-      <h1 >Admin Principal Dashboard</h1>
+      <h1 >Admin Teacher Dashboard</h1>
       <button onClick={() => setResizingEnabled(!resizingEnabled)}>
         {resizingEnabled ? "Disable Resize" : "Enable Resize"}
       </button>
@@ -164,7 +163,9 @@ const Dashboard = () => {
           <img style={{width:'100%',height:"100%"}} src={imagePaths[currentImageIndex]} alt="Widget 1" />
         </div>
         <div key="widget2" style={{ backgroundColor: "lightcoral" }}>
-          <NonTeaching teacherData={teacherData}/>
+          {/* <NonTeaching teacherData={teacherData}/> */}
+          <img style={{ width: '100%', height: '100%' }} src={require('../../images/chart.png')} alt="Chart" />
+
         </div>
         <div key="widget3" >
           <TeacherList />
@@ -172,12 +173,6 @@ const Dashboard = () => {
         <div key="widget4">
           <StudentList />
         </div>
-        {/* {dashboardWidgets.map((widget) => (
-          <div key={widget.id}>
-          
-            {<CalendarGridWidget {...widget} />}
-          </div>
-        ))} */}
        {JSON.parse(localStorage.getItem('calenderWidget')) ? <div key="widget5" style={{ backgroundColor: "purple"}}>
         <Calenderwidget />
         </div> : null}
@@ -186,4 +181,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default AdminTeacherDashboard;

@@ -5,12 +5,11 @@ import Footer from '../Footer/Footer';
 
 const MainDashboard = () => {
   return (
-   <div>
+   <div style={{textAlign:'center'}}>
      <Header />
     <h1>Main Admin  Dashboard</h1>
-    <Link to="/dashboard">
-        <button>Go to Dashboard</button>
-      </Link>
+      <button>Go to Admin Principal Dashboard</button>
+      <button>Go to Admin Teacher Dashboard</button>
     <Footer />
    </div>
   )
