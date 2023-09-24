@@ -12,7 +12,7 @@ const TeacherDashBoard = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   useEffect(() => {
     // Retrieve the saved layout from local storage
-    const savedLayout = localStorage.getItem("dashboardLayout");
+    const savedLayout = localStorage.getItem("teacherDashboardLayout");
 
     if (savedLayout) {
       setLayout(JSON.parse(savedLayout));

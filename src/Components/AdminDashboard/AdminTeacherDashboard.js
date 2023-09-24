@@ -49,7 +49,7 @@ const AdminTeacherDashboard = () => {
     { i: "widget4", x: 4, y: 4, w: 4, h: 4 },
   ];
 
-  const savedLayout = JSON.parse(localStorage.getItem("dashboardLayout"));
+  const savedLayout = JSON.parse(localStorage.getItem("teacherDashboardLayout"));
   const initialLayout = savedLayout || initialLayout1;
 
   const [layout, setLayout] = useState(initialLayout);
@@ -71,7 +71,7 @@ const AdminTeacherDashboard = () => {
   const onAddWidget = (widget) => {
     // setDashboardWidgets([...dashboardWidgets, widget]);
     setIsCalenderWidget(true)
-    localStorage.setItem("calenderWidget", JSON.stringify(true));
+    localStorage.setItem("calenderWidgetTeacher", JSON.stringify(true));
     console.log("first", widget)
   };
 
@@ -84,7 +84,7 @@ const AdminTeacherDashboard = () => {
 
   const resetLayout = () => {
     setLayout(layouts[currentLayoutIndex]);
-    localStorage.removeItem("calenderWidget")
+    localStorage.removeItem("calenderWidgetTeacher")
   };
 
   const switchLayout = (layoutIndex) => {
@@ -121,7 +121,7 @@ const AdminTeacherDashboard = () => {
   }, []);
 
   const handleSaveLayout = () => {
-    localStorage.setItem("dashboardLayout", JSON.stringify(layout));
+    localStorage.setItem("teacherDashboardLayout", JSON.stringify(layout));
     alert("Layout saved successfully!");
   };
 
@@ -173,7 +173,7 @@ const AdminTeacherDashboard = () => {
         <div key="widget4">
           <StudentList />
         </div>
-       {JSON.parse(localStorage.getItem('calenderWidget')) ? <div key="widget5" style={{ backgroundColor: "purple"}}>
+       {JSON.parse(localStorage.getItem('calenderWidgetTeacher')) ? <div key="widget5" style={{ backgroundColor: "purple"}}>
         <Calenderwidget />
         </div> : null}
       </GridLayout>

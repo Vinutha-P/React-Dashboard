@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       {user ? (
         user === 'admin' ? (
-          <Dashboard userType={user} />
+          <MainDashboard userType={user} />
         ) : user === 'principal' ? (
           <PrincipalDashboard />
         ) : user === 'teacher' ? ( 
