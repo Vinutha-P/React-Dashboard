@@ -7,6 +7,9 @@ import TeacherList from "../TeacherList/TeacherList";
 import StudentList from "../StudentList/StudentList";
 import NonTeaching from "../NonTeaching/nonTeaching";
 import Calenderwidget from "../Sidebar/calenderwidget";
+import { Responsive, WidthProvider } from "react-grid-layout";
+
+const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const PrincipalDashboard = () => {
 
@@ -62,12 +65,13 @@ const PrincipalDashboard = () => {
     <div>
       <Header />
       <h1 style={{textAlign:'center'}}>Principal Dashboard</h1>
-      <GridLayout
-        className="layout"
-        layout={layout}
-        cols={4}
-        rowHeight={100}
-        width={1430}
+      <ResponsiveGridLayout
+       className="layout"
+       layouts={{ lg: layout }}
+       breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480}}
+       cols={{ lg: 4, md: 4, sm: 4, xs: 4}}
+       rowHeight={300}
+       width={1000}
         isResizable={false}
         isDraggable={false}
       >
@@ -88,7 +92,7 @@ const PrincipalDashboard = () => {
             <Calenderwidget />
           </div>
         )}
-      </GridLayout>
+      </ResponsiveGridLayout>
     </div>
   );
 };

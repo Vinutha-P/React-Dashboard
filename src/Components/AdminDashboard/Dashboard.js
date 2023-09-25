@@ -15,6 +15,9 @@ import Calenderwidget from "../Sidebar/calenderwidget";
 import Sidebar from "../Sidebar/Sidebar";
 import { Link } from "react-router-dom";
 import './dashboard.css';
+import { Responsive, WidthProvider } from "react-grid-layout";
+
+const ResponsiveGridLayout = WidthProvider(Responsive);
 
 
 const availableWidgets = [
@@ -23,31 +26,31 @@ const availableWidgets = [
 
 const Dashboard = () => {
   const initialLayout1 = [
-    { i: "widget1", x: 0, y: 2, w: 2, h: 4 },
-    { i: "widget2", x: 2, y: 0, w: 2, h: 4 },
-    { i: "widget3", x: 0, y: 2, w: 2, h: 4 },
-    { i: "widget4", x: 2, y: 0, w: 2, h: 4 },
+    { i: "widget1", x: 0, y: 2, w: 2, h: 1 },
+    { i: "widget2", x: 2, y: 0, w: 2, h: 1 },
+    { i: "widget3", x: 0, y: 2, w: 2, h: 1 },
+    { i: "widget4", x: 2, y: 0, w: 2, h: 1 },
   ];
 
   const initialLayout2 = [
-    { i: "widget1", x: 2, y: 2, w: 2, h: 2 },
-    { i: "widget2", x: 0, y: 0, w: 2, h: 6 },
-    { i: "widget3", x: 2, y: 2, w: 2, h: 6 },
-    { i: "widget4", x: 0, y: 4, w: 2, h: 2 },
+    { i: "widget1", x: 2, y: 2, w: 2, h: 1 },
+    { i: "widget2", x: 0, y: 0, w: 2, h: 2 },
+    { i: "widget3", x: 2, y: 2, w: 2, h: 2 },
+    { i: "widget4", x: 0, y: 4, w: 2, h: 1 },
   ];
 
   const initialLayout3 = [
-    { i: "widget1", x: 0, y: 2, w: 2, h: 4 },
-    { i: "widget2", x: 3, y: 0, w: 2, h: 6 },
-    { i: "widget3", x: 0, y: 2, w: 2, h: 2 },
-    { i: "widget4", x: 1, y: 6, w: 4, h: 4 },
+    { i: "widget1", x: 0, y: 2, w: 2, h: 1 },
+    { i: "widget2", x: 3, y: 0, w: 2, h: 2 },
+    { i: "widget3", x: 0, y: 2, w: 2, h: 1 },
+    { i: "widget4", x: 1, y: 6, w: 4, h: 1 },
   ];
 
   const initialLayout4 = [
-    { i: "widget1", x: 0, y: 0, w: 4, h: 4 },
-    { i: "widget2", x: 0, y: 4, w: 4, h: 4 },
-    { i: "widget3", x: 4, y: 0, w: 4, h: 4 },
-    { i: "widget4", x: 4, y: 4, w: 4, h: 4 },
+    { i: "widget1", x: 0, y: 0, w: 4, h: 2 },
+    { i: "widget2", x: 0, y: 4, w: 4, h: 2 },
+    { i: "widget3", x: 4, y: 0, w: 4, h: 2 },
+    { i: "widget4", x: 4, y: 4, w: 4, h: 2 },
   ];
 
   const savedLayout = JSON.parse(localStorage.getItem("dashboardLayout"));
@@ -109,7 +112,10 @@ const Dashboard = () => {
   ];
 
   const onLayoutChange = (newLayout) => {
-    setLayout(newLayout);
+    // Only update the layout if it's different from the current layout
+    if (JSON.stringify(newLayout) !== JSON.stringify(layout)) {
+      setLayout(newLayout);
+    }
   };
 
   const updateImage = () => {
@@ -154,12 +160,13 @@ const Dashboard = () => {
         />
       </div>
       <Sidebar widgets={availableWidgets} onAddWidget={onAddWidget} />
-      <GridLayout
+      <ResponsiveGridLayout
         className="layout"
-        layout={layout}
-        cols={4}
-        rowHeight={100}
-        width={1430}
+        layouts={{ lg: layout }}
+        breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480}}
+        cols={{ lg: 4, md: 4, sm: 4, xs: 4}}
+        rowHeight={300}
+        width={1000}
         onLayoutChange={onLayoutChange}
         draggableCancel={
           draggableEnabled ? "" : "input,textarea,.react-resizable-handle"
@@ -182,7 +189,7 @@ const Dashboard = () => {
         {JSON.parse(localStorage.getItem('calenderWidget')) ? <div key="widget5"  style={{marginTop:"2rem"}}>
           <Calenderwidget />
         </div> : null}
-      </GridLayout>
+      </ResponsiveGridLayout>
     </div>
     </div>
   );
