@@ -6,7 +6,7 @@ import PrincipalDashboard from "./Components/PrincipalDashboard/principalDashboa
 import TeacherDashBoard from "./Components/TeacherDashBoard/teacherDashBoard";
 import AdminTeacherDashboard from "./Components/AdminDashboard/AdminTeacherDashboard";
 import MainDashboard from "./Components/AdminDashboard/MainDashboard";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Routes } from "react-router-dom/dist";
 
 function App() {
@@ -18,37 +18,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* {user ? (
-        user === "admin" ? (
-          <MainDashboard userType={user} />
-        ) : user === "principal" ? (
-          <PrincipalDashboard />
-        ) : user === "teacher" ? (
-          <TeacherDashBoard />
-        ) : (
-          <Login onLogin={handleLogin} />
-        )
-      ) : (
-        <Login onLogin={handleLogin} />
-      )} */}
-
       <Router>
         <Routes>
-          {/* <Route exact path="/">
-            {user ? (
-              user === "admin" ? (
-                <MainDashboard userType={user} />
-              ) : user === "principal" ? (
-                <PrincipalDashboard />
-              ) : user === "teacher" ? (
-                <TeacherDashBoard />
-              ) : (
-                <Login onLogin={handleLogin} />
-              )
-            ) : (
-              <Login onLogin={handleLogin} />
-            )}
-          </Route> */}
           <Route path="/" element={user ==="admin" ? (<MainDashboard userType={user} />): user === "principal" ? (
                 <PrincipalDashboard />
               ) : user === "teacher" ? (

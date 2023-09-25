@@ -69,7 +69,7 @@ const TeacherDashBoard = () => {
         <div key="widget4" >
         <StudentList />
         </div>
-        <div key="widget5" style={{ backgroundColor: "purple" }}>
+        <div key="widget5">
         <Calenderwidget />
         </div>
       </GridLayout>

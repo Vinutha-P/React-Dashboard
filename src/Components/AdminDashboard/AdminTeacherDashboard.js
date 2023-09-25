@@ -173,7 +173,7 @@ const AdminTeacherDashboard = () => {
         <div key="widget4">
           <StudentList />
         </div>
-       {JSON.parse(localStorage.getItem('calenderWidgetTeacher')) ? <div key="widget5" style={{ backgroundColor: "purple"}}>
+       {JSON.parse(localStorage.getItem('calenderWidgetTeacher')) ? <div key="widget5">
         <Calenderwidget />
         </div> : null}
       </GridLayout>
