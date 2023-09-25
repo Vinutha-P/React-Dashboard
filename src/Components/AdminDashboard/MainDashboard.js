@@ -8,8 +8,12 @@ const MainDashboard = () => {
    <div style={{textAlign:'center'}}>
      <Header />
     <h1>Main Admin  Dashboard</h1>
-      <button>Go to Admin Principal Dashboard</button>
-      <button>Go to Admin Teacher Dashboard</button>
+    <Link to="/dashboard">
+        <button>Go to Admin Principal Dashboard</button>
+      </Link>
+      <Link to="/admin-teacher-dashboard">
+        <button>Go to Admin Teacher Dashboard</button>
+      </Link>
     <Footer />
    </div>
   )
