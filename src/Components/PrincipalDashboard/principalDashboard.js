@@ -7,11 +7,23 @@ import TeacherList from "../TeacherList/TeacherList";
 import StudentList from "../StudentList/StudentList";
 import NonTeaching from "../NonTeaching/nonTeaching";
 import Calenderwidget from "../Sidebar/calenderwidget";
-import { Link } from "react-router-dom";
 
 const PrincipalDashboard = () => {
-  const [layout, setLayout] = useState([]);
+
+  const initialLayout = [
+    { i: "widget1", x: 0, y: 2, w: 2, h: 4 },
+    { i: "widget2", x: 2, y: 0, w: 2, h: 4 },
+    { i: "widget3", x: 0, y: 2, w: 2, h: 4 },
+    { i: "widget4", x: 2, y: 0, w: 2, h: 4 },
+    // Add more initial widgets as needed
+  ];
+
+  const [layout, setLayout] = useState(initialLayout);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showWidget5, setShowWidget5] = useState(
+    JSON.parse(localStorage.getItem("calenderWidget")) || false
+  );
+
   useEffect(() => {
     // Retrieve the saved layout from local storage
     const savedLayout = localStorage.getItem("dashboardLayout");
@@ -71,9 +83,11 @@ const PrincipalDashboard = () => {
         <div key="widget4" >
         <StudentList />
         </div>
-        <div key="widget5" >
-        <Calenderwidget />
-        </div>
+        {showWidget5 && (
+          <div key="widget5"  style={{marginTop:"2rem"}}>
+            <Calenderwidget />
+          </div>
+        )}
       </GridLayout>
     </div>
   );

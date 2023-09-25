@@ -27,8 +27,6 @@ const Dashboard = () => {
     { i: "widget2", x: 2, y: 0, w: 2, h: 4 },
     { i: "widget3", x: 0, y: 2, w: 2, h: 4 },
     { i: "widget4", x: 2, y: 0, w: 2, h: 4 },
-  //  { i: "widget5", x: 0, y: 4, w: 2, h: 4 },
-
   ];
 
   const initialLayout2 = [
