@@ -12,6 +12,7 @@ import { RiLayoutMasonryFill } from "react-icons/ri";
 import { RiLayout4Fill } from "react-icons/ri";
 import Calenderwidget from "../Sidebar/calenderwidget";
 import Sidebar from "../Sidebar/Sidebar";
+import { Link } from "react-router-dom";
 
 
 const availableWidgets = [
@@ -128,7 +129,9 @@ const AdminTeacherDashboard = () => {
   return (
     <div>
       <Header />
-      <h1 >Admin Teacher Dashboard</h1>
+    <div className="dashboard-container">
+    <h1 className="dashboard-title">Admin Teacher Dashboard</h1>
+    <div className="dashboard-buttons">
       <button onClick={() => setResizingEnabled(!resizingEnabled)}>
         {resizingEnabled ? "Disable Resize" : "Enable Resize"}
       </button>
@@ -137,7 +140,11 @@ const AdminTeacherDashboard = () => {
       </button>
       <button onClick={resetLayout}>Reset Layout</button>
       <button onClick={handleSaveLayout}>Save Layout</button>
-      <div>
+      <Link to="/">
+      <button >Logout</button>
+      </Link>
+      </div>
+      <div className="dashboard-layout-selector">
         <Select
           options={layoutOptions}
           value={layoutOptions[currentLayoutIndex]}
@@ -163,7 +170,6 @@ const AdminTeacherDashboard = () => {
           <img style={{width:'100%',height:"100%"}} src={imagePaths[currentImageIndex]} alt="Widget 1" />
         </div>
         <div key="widget2" style={{ backgroundColor: "lightcoral" }}>
-          {/* <NonTeaching teacherData={teacherData}/> */}
           <img style={{ width: '100%', height: '100%' }} src={require('../../images/chart.png')} alt="Chart" />
 
         </div>
@@ -173,10 +179,11 @@ const AdminTeacherDashboard = () => {
         <div key="widget4">
           <StudentList />
         </div>
-       {JSON.parse(localStorage.getItem('calenderWidgetTeacher')) ? <div key="widget5">
+       {JSON.parse(localStorage.getItem('calenderWidgetTeacher')) ? <div key="widget5" >
         <Calenderwidget />
         </div> : null}
       </GridLayout>
+    </div>
     </div>
   );
 };

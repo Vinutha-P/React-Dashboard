@@ -7,6 +7,7 @@ import TeacherList from "../TeacherList/TeacherList";
 import StudentList from "../StudentList/StudentList";
 import NonTeaching from "../NonTeaching/nonTeaching";
 import Calenderwidget from "../Sidebar/calenderwidget";
+import { Link } from "react-router-dom";
 
 const PrincipalDashboard = () => {
   const [layout, setLayout] = useState([]);

@@ -1,0 +1,57 @@
+/* General styles for the dashboard container */
+.dashboard-container {
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  /* Style the title */
+  .dashboard-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the layout selector */
+  .dashboard-layout-selector {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Add responsive styles for the widgets within the grid */
+  /* Default styles for your layout */
+.layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default layout with 4 columns */
+    grid-gap: 16px; /* Adjust the gap between grid items as needed */
+  }
+  
+  /* Media query for medium-sized screens (e.g., tablets) */
+  @media (max-width: 768px) {
+    .layout {
+      grid-template-columns: repeat(2, 1fr); /* Change to 2 columns for medium-sized screens */
+      /* Adjust other layout styles as needed */
+    }
+  }
+  
+  /* Media query for smaller screens (e.g., smartphones) */
+  @media (max-width: 480px) {
+    .layout {
+      grid-template-columns: repeat(1, 1fr); /* Change to 1 column for smaller screens */
+      /* Adjust other layout styles as needed */
+    }
+  }
+  
+  
+  /* Style individual widgets */
+  .layout > div {
+   /* Responsive styles for widgets */
+    @media (max-width: 768px) {
+     width:100%
+    }
+  
+    @media (max-width: 480px) {
+        width:100%
+    }
+  }
+  
+
+  

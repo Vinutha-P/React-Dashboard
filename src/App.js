@@ -28,6 +28,7 @@ function App() {
           <Route path="/admin-principal-dashboard" element={<PrincipalDashboard />} />
           <Route path="/admin-teacher-dashboard" element={<AdminTeacherDashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/main-dashboard" element={<MainDashboard />} />
         </Routes>
       </Router>
     </div>

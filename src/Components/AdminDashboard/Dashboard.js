@@ -13,6 +13,8 @@ import { RiLayoutMasonryFill } from "react-icons/ri";
 import { RiLayout4Fill } from "react-icons/ri";
 import Calenderwidget from "../Sidebar/calenderwidget";
 import Sidebar from "../Sidebar/Sidebar";
+import { Link } from "react-router-dom";
+import './dashboard.css';
 
 
 const availableWidgets = [
@@ -128,8 +130,10 @@ const Dashboard = () => {
 
   return (
     <div>
-      <Header />
-      <h1 >Admin Principal Dashboard</h1>
+    <Header />
+    <div className="dashboard-container">
+    <h1 className="dashboard-title">Admin Principal Dashboard</h1>
+    <div className="dashboard-buttons">
       <button onClick={() => setResizingEnabled(!resizingEnabled)}>
         {resizingEnabled ? "Disable Resize" : "Enable Resize"}
       </button>
@@ -138,7 +142,12 @@ const Dashboard = () => {
       </button>
       <button onClick={resetLayout}>Reset Layout</button>
       <button onClick={handleSaveLayout}>Save Layout</button>
-      <div>
+      <Link to="/">
+        <button>Logout</button>
+      </Link>
+      
+      </div>
+      <div className="dashboard-layout-selector">
         <Select
           options={layoutOptions}
           value={layoutOptions[currentLayoutIndex]}
@@ -172,16 +181,11 @@ const Dashboard = () => {
         <div key="widget4">
           <StudentList />
         </div>
-        {/* {dashboardWidgets.map((widget) => (
-          <div key={widget.id}>
-          
-            {<CalendarGridWidget {...widget} />}
-          </div>
-        ))} */}
-       {JSON.parse(localStorage.getItem('calenderWidget')) ? <div key="widget5"  style={{marginTop:"2rem"}}>
-        <Calenderwidget />
+        {JSON.parse(localStorage.getItem('calenderWidget')) ? <div key="widget5"  style={{marginTop:"2rem"}}>
+          <Calenderwidget />
         </div> : null}
       </GridLayout>
+    </div>
     </div>
   );
 };
