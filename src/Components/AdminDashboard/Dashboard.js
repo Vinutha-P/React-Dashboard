@@ -97,11 +97,11 @@ const Dashboard = () => {
   };
 
   const imagePaths = [
-    require("../../images/school.jpeg"),
-    require("../../images/classroom.jpeg"),
-    require("../../images/student.jpeg"),
-    require("../../images/teacher.jpeg"),
-    require("../../images/students.jpeg"),
+    require("../../images/1.jpeg"),
+    require("../../images/2.jpeg"),
+    require("../../images/3.jpeg"),
+    require("../../images/4.jpeg"),
+    require("../../images/5.jpeg"),
   ];
 
   const layoutOptions = [
@@ -174,10 +174,10 @@ const Dashboard = () => {
         isResizable={resizingEnabled}
         isDraggable={draggableEnabled}
       >
-        <div key="widget1" style={{ backgroundColor: "lightblue" }}>
+        <div key="widget1" style={{ backgroundColor: "lightgrey" }}>
           <img style={{width:'100%',height:"100%"}} src={imagePaths[currentImageIndex]} alt="Widget 1" />
         </div>
-        <div key="widget2" style={{ backgroundColor: "lightcoral" }}>
+        <div key="widget2" style={{ backgroundColor: "lightgrey" }}>
           <NonTeaching teacherData={teacherData}/>
         </div>
         <div key="widget3" >
