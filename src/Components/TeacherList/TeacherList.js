@@ -11,7 +11,7 @@ const TeacherList = () => {
   ];
 
   return (
-    <div style={{ padding: '10px', overflow: 'hidden' ,height:'100%',backgroundColor:'lightgrey'}}>
+    <div style={{ padding: '10px', overflow: 'hidden' ,height:'93%',backgroundColor:'lightgrey'}}>
       <h2>Teachers List</h2>
       <div style={{ overflowY: 'auto',  }}>
         <table style={{ width: '100%' }}>
